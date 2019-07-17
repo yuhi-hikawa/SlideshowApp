@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SlideshowApp
+//  taskapp
 //
-//  Created by 樋川雄飛 on 2019/07/11.
+//  Created by 樋川雄飛 on 2019/07/12.
 //  Copyright © 2019 Yuhi Hikawa. All rights reserved.
 //
 

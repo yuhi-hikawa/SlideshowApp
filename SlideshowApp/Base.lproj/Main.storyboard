@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="66" id="E9a-sd-ImQ"/>
                                     <constraint firstAttribute="height" constant="30" id="jvZ-iS-ycH"/>
                                 </constraints>
-                                <state key="normal" title="再生/停止"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VoI-3v-uPv"/>
                                 </connections>
@@ -77,6 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button1" destination="TU1-gG-bNi" id="Uic-Ah-xG6"/>
+                        <outlet property="button2" destination="aY6-OO-TIU" id="0Q4-2J-nh9"/>
+                        <outlet property="button3" destination="90O-Er-xiZ" id="otA-Fv-Co4"/>
                         <outlet property="imageView" destination="fg1-rz-Pb9" id="zNh-H7-83X"/>
                     </connections>
                 </viewController>

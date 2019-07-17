@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     var imageIndex = 0
@@ -27,6 +28,13 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var button1: UIButton!
+    
+    @IBOutlet weak var button2: UIButton!
+    
+    @IBOutlet weak var button3: UIButton!
+    
     
     @IBAction func move(_ sender: UIButton) {
         if imageIndex == 2 {
@@ -48,17 +56,27 @@ class ViewController: UIViewController {
     
     @IBAction func startStop(_ sender: UIButton) {
         
-        if timer == nil { timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true) } else {
+        if timer == nil { timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button3.setTitle("停止", for: .normal)
+        } else {
+            button1.isEnabled = true
+            button2.isEnabled = true
+            button3.setTitle("再生", for: .normal)
             timer.invalidate()
             timer = nil
         }
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         imageView.image = images[0]
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,10 +84,15 @@ class ViewController: UIViewController {
         let bigViewController:BigViewController = segue.destination as! BigViewController
        
         bigViewController.x = imageView.image
+        if timer != nil {
+            timer.invalidate()
+            timer = nil }
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
+    
+    
 
 
 }
